@@ -1,0 +1,7 @@
+This script is meant to pull and display the opening price and the latest price for a list of market indexes.
+
+
+I want to run it constantly on a small Raspberrypi screen so that the data is always in front of me
+
+
+
