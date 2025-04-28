@@ -21,7 +21,16 @@ def main():
  
         value3='^GSPC'
         DisplayVal(value3)
+
+        value4='BTC-USD'
+        DisplayVal(value4)
         
+        value5='VOO'
+        DisplayVal(value5)
+
+        value6='VTI'
+        DisplayVal(value6)
+
         time.sleep(20)
 
 ##Function that displays the value in the terminal
