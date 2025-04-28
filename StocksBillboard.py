@@ -15,7 +15,6 @@ def main():
         value='^DJI'
         DisplayVal(value)
     
-    
         value2='^IXIC'
         DisplayVal(value2)
  
@@ -30,6 +29,9 @@ def main():
 
         value6='VTI'
         DisplayVal(value6)
+
+        value7='ZB=F'
+        DisplayVal(value7)
 
         time.sleep(20)
 
