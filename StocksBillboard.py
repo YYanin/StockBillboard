@@ -7,25 +7,44 @@ from colorama import Fore, Style, init
 init(autoreset=True) # Initialize colorama, and reset colors after each print
 
 def main():
-    clearScreen()
+
+    while True:
+
+        clearScreen()
     
-    value='VOO'
+        value='^DJI'
+        DisplayVal(value)
+    
+    
+        value2='^IXIC'
+        DisplayVal(value2)
+ 
+        value3='^GSPC'
+        DisplayVal(value3)
+        
+        time.sleep(20)
+
+##Function that displays the value in the terminal
+def DisplayVal(value):
+
     info=GetPrice(value,1)
     onOpen=GetPrice(value,2)
-    
     color=GetColor(onOpen,info)
+    
+    percent=round((((info*100)/onOpen)-100),2)
 
     print(value)
 
     if color=='RED':
-        print('Open: ',value,' = ',onOpen, '$')
-        print('Latest:',value,' = ',Fore.RED + str(info), '$')
+        print('Open: ',value,' = ',onOpen)
+        print('Latest:',value,' = ',Fore.RED + str(info))
+        print('Loss ', Fore.RED + str(percent),'%', '\n')
     else:
-        print('On Open: ',value,' = ',onOpen, '$')
-        print('Latest:',value,' = ',Fore.GREEN + str(info), '$')
+        print('On Open: ',value,' = ',onOpen)
+        print('Latest:',value,' = ',Fore.GREEN + str(info))
+        print('Gain ', Fore.GREEN + str(percent),'%', '\n')
 
-
-    return 0
+    return
 
 
 ##Function to return the current value of a given ticker
