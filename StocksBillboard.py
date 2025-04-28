@@ -13,10 +13,17 @@ def main():
     info=GetPrice(value,1)
     onOpen=GetPrice(value,2)
     
-    print(value,':')
+    color=GetColor(onOpen,info)
 
-    print('On Open: ',value,' = ',onOpen, '$')
-    print('Latest:',value,' = ',info, '$')
+    print(value)
+
+    if color=='RED':
+        print('Open: ',value,' = ',onOpen, '$')
+        print('Latest:',value,' = ',Fore.RED + str(info), '$')
+    else:
+        print('On Open: ',value,' = ',onOpen, '$')
+        print('Latest:',value,' = ',Fore.GREEN + str(info), '$')
+
 
     return 0
 
@@ -36,6 +43,15 @@ def GetPrice(stock,time):
     
     return price
 
+def GetColor(StartVal,CurrentVal):
+    
+
+    if StartVal>=CurrentVal:
+        color='RED'
+        return color
+    else:
+        color='GREEN'
+        return color
 
 ##Clears the screen
 def clearScreen():
